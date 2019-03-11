@@ -1,0 +1,33 @@
+{
+  "name": "link-blog-backend",
+  "version": "1.0.0",
+  "description": "the web portion of august-project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "author": "Michael Gajda",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "got": "^9.6.0",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "metascraper": "^4.10.1",
+    "metascraper-author": "^4.10.1",
+    "metascraper-date": "^4.10.1",
+    "metascraper-description": "^4.10.1",
+    "metascraper-image": "^4.10.1",
+    "metascraper-publisher": "^4.10.1",
+    "metascraper-title": "^4.10.1",
+    "metascraper-url": "^4.10.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "dotenv": "^6.0.0",
+    "node-fetch": "^2.2.0",
+    "nodemon": "^1.18.10"
+  },
+  "proxy": "http://localhost:8080"
+}
