@@ -4,9 +4,9 @@ const app = express();
 require('dotenv').config();
 const fs = require("fs");
 const https = require("https");
-const http = require("http")
+const http = require("http");
 
-var apiRouter = require("./controllers/api.js");
+let apiRouter = require("./controllers/api.js");
 
 
 app.use(express.static("dist"));

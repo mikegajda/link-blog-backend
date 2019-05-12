@@ -16,7 +16,6 @@ async function getMetadata(targetUrl) {
 }
 
 const getOpengraphMetadata = async (req, res, next) => {
-    // https://maps.googleapis.com/maps/api/place/autocomplete/output
 
     const {body: html, url} = await got(req.query.url);
     const metadata = await metascraper({html, url});

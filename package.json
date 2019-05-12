@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "test": "mocha"
   },
   "author": "Michael Gajda",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.452.0",
     "express": "^4.16.3",
     "got": "^9.6.0",
     "http": "0.0.0",
@@ -24,8 +26,10 @@
     "metascraper-url": "^4.10.1"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "concurrently": "^3.5.1",
     "dotenv": "^6.0.0",
+    "mocha": "^6.1.4",
     "node-fetch": "^2.2.0",
     "nodemon": "^1.18.10"
   },
