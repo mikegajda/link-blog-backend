@@ -4,15 +4,17 @@
   "description": "the web portion of august-project",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "tsc &&  \"node .\"",
     "server": "nodemon index.js",
-    "test": "mocha"
+    "test": "tsc && mocha"
   },
   "author": "Michael Gajda",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.16.1",
     "aws-sdk": "^2.452.0",
-    "express": "^4.16.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
     "got": "^9.6.0",
     "http": "0.0.0",
     "https": "^1.0.0",
@@ -26,12 +28,15 @@
     "metascraper-url": "^4.10.1"
   },
   "devDependencies": {
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^12.0.1",
     "chai": "^4.2.0",
     "concurrently": "^3.5.1",
     "dotenv": "^6.0.0",
     "mocha": "^6.1.4",
     "node-fetch": "^2.2.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "typescript": "^3.4.5"
   },
   "proxy": "http://localhost:8080"
 }

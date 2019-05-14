@@ -3,14 +3,14 @@ const uuid = require('uuid');
 require('dotenv').config();
 
 
-const uploadPhotoToS3 = async (url) => {
+const uploadPhotoToS3 = async (url: string) => {
 
     // Create unique bucket name
-    let bucketName = process.env.s3Bucket;
+    let bucketName: string = process.env.s3Bucket;
     // Create name for uploaded object key
-    let keyName = 'hello_world.txt';
+    let keyName: string = 'hello_world.txt';
 
-    let s3 = new aws.S3({apiVersion: '2006-03-01'});
+    let s3: any = new aws.S3({apiVersion: '2006-03-01'});
 
     try {
         // Create a promise on S3 service object

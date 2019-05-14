@@ -1,4 +1,4 @@
-const {uploadPhotoToS3} = require("../services/s3");
+const {uploadPhotoToS3} = require("../dist/s3");
 const assert = require('assert');
 
 describe("s3", () => {
