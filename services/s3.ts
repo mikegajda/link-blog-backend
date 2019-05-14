@@ -1,3 +1,6 @@
+import * as fs from "fs";
+import * as path from "path";
+
 const aws = require("aws-sdk");
 const uuid = require('uuid');
 require('dotenv').config();
@@ -6,11 +9,15 @@ require('dotenv').config();
 const uploadPhotoToS3 = async (url: string) => {
 
     // Create unique bucket name
-    let bucketName: string = process.env.s3Bucket;
+    let bucketName: string = uuid.v4();
     // Create name for uploaded object key
-    let keyName: string = 'hello_world.txt';
+    let keyName: string = uuid.v4();
 
     let s3: any = new aws.S3({apiVersion: '2006-03-01'});
+
+    let pathToImage: string = "/Users/mikegajda/LargeFiles/link-blog-backend/IMG_8612.JPG";
+
+    let image: Buffer = fs.readFileSync(pathToImage);
 
     try {
         // Create a promise on S3 service object
@@ -20,7 +27,14 @@ const uploadPhotoToS3 = async (url: string) => {
     }
 
     try {
-        let objectParams = {Bucket: bucketName, Key: keyName, Body: 'Hello World!'};
+        let objectParams = {
+                ACL: "public-read",
+                Bucket: bucketName,
+                ContentType: "binary",
+                Key: path.basename(pathToImage),
+                Body: image
+            }
+        ;
         await s3.putObject(objectParams).promise();
     } catch (e) {
         throw Error(e)
